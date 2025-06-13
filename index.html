@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidades Globales GT | Becas Internacionales para Guatemaltecos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0056b3; /* Azul más vibrante */
+            --secondary-color: #007bff; /* Azul de acento */
+            --accent-color: #28a745; /* Verde para llamadas a la acción */
+            --text-color: #333;
+            --light-bg: #f8f9fa; /* Fondo claro para secciones */
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- Header y Navegación --- */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            font-size: 2.8em;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Para poner los elementos en línea */
+            justify-content: center; /* Centrar elementos */
+            flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+        }
+
+        /* --- Contenido Principal --- */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px); /* Efecto al pasar el ratón */
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after { /* Subrayado decorativo */
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* --- Tarjetas de Contenido (Becas, Universidades, Historias) --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espacio entre ícono y texto */
+        }
+
+        .card h3 i {
+            color: var(--secondary-color);
+            font-size: 1.2em;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            color: #555;
+            flex-grow: 1; /* Para que el párrafo ocupe el espacio disponible */
+        }
+
+        .card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .card a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* --- Lista de Recursos --- */
+        .resources-list ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .resources-list li {
+            background-color: var(--card-bg);
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .resources-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .resources-list li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resources-list li a i {
+            color: var(--accent-color);
+            font-size: 1.1em;
+        }
+
+        .resources-list li a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* --- Formulario de Contacto --- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        form input,
+        form textarea {
+            width: calc(100% - 20px); /* Ajuste para el padding */
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+
+        form button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            align-self: flex-start; /* Alinea el botón a la izquierda */
+        }
+
+        form button:hover {
+            background-color: #218838; /* Tono más oscuro de verde */
+            transform: translateY(-2px);
+        }
+
+        /* --- Call to Action Section --- */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .cta-section h2 {
+            color: white; /* Sobrescribe el color del h2 general */
+            margin-bottom: 20px;
+        }
+
+        .cta-section h2::after { /* Subrayado blanco para esta sección */
+            background-color: white;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block; /* Para aplicar transform */
+        }
+
+        .cta-section .btn:hover {
+            background-color: #218838;
+            transform: translateY(-3px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5em;
+            margin-top: 50px;
+            font-size: 0.9em;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Responsividad --- */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            main {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+
+            section {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr; /* Una columna en móviles */
+            }
+
+            .cta-section {
+                padding: 40px 15px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8em;
+            }
+
+            .cta-section p {
+                font-size: 1em;
+            }
+
+            .cta-section .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Oportunidades Globales GT</h1>
+        <p>Tu puente hacia becas internacionales de prestigio</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre Nosotros</a></li>
+            <li><a href="#scholarships"><i class="fas fa-graduation-cap"></i> Tipos de Becas</a></li>
+            <li><a href="#universities"><i class="fas fa-university"></i> Universidades</a></li>
+            <li><a href="#testimonials"><i class="fas fa-quote-right"></i> Historias de Éxito</a></li>
+            <li><a href="#resources"><i class="fas fa-book"></i> Recursos</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>Sobre Nosotros</h2>
+            <p>En **Oportunidades Globales GT**, nos dedicamos a ser el faro que guía a estudiantes guatemaltecos talentosos hacia becas internacionales que transforman vidas. Creemos firmemente que la educación de calidad no debe tener fronteras. Nuestro equipo está comprometido en conectar tus aspiraciones académicas con las **mejores universidades y programas de becas en el extranjero**, haciendo tu sueño de estudiar fuera del país una realidad tangible y accesible.</p>
+            <p>Conocemos los desafíos, por eso ofrecemos orientación clara y actualizada sobre requisitos, procesos de aplicación y preparación.</p>
+        </section>
+
+        <section id="scholarships">
+            <h2>Tipos de Becas Destacadas</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3><i class="fas fa-globe"></i> Becas DAAD (Alemania)</h3>
+                    <p>Accede a programas de **Maestría y Doctorado** en universidades alemanas de renombre. Ideal para profesionales con un excelente expediente académico y dominio avanzado de inglés o alemán. ¡Una oportunidad para investigar y crecer en el corazón de Europa!</p>
+                    <a href="https://www.daad.de/en/" target="_blank">Más información <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-flag-usa"></i> Becas Fulbright (EE.UU.)</h3>
+                    <p>Programas de **Maestría e Investigación** en Estados Unidos. Enfocado en líderes emergentes con un fuerte compromiso social. Requiere un excelente nivel de inglés (TOEFL) y experiencia profesional o de investigación.</p>
+                    <a href="https://www.fulbright.org.gt" target="_blank">Más información <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-euro-sign"></i> Erasmus Mundus (Europa)</h3>
+                    <p>Becas completas para programas de **Máster Conjunto** en varias universidades europeas. Fomenta la movilidad y la excelencia académica en diferentes países. Amplía tus horizontes culturales y profesionales.</p>
+                    <a href="https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters-scholarships" target="_blank">Más información <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                 <div class="card">
+                    <h3><i class="fas fa-leaf"></i> Becas Chevening (Reino Unido)</h3>
+                    <p>Diseñadas para líderes con potencial, estas becas ofrecen financiación completa para un programa de **Máster de un año** en cualquier universidad del Reino Unido. Un trampolín para tu carrera profesional.</p>
+                    <a href="https://www.chevening.org/" target="_blank">Más información <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="universities">
+            <h2>Universidades Destacadas</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3><i class="fas fa-map-marker-alt"></i> University of Toronto (Canadá)</h3>
+                    <p>Una de las universidades más prestigiosas de América del Norte. Ofrece programas innovadores en **Ingeniería, Ciencias de la Computación, Negocios, y Humanidades**. Un entorno multicultural y de vanguardia.</p>
+                    <a href="https://future.utoronto.ca" target="_blank">Sitio oficial <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Universidad de Salamanca (España)</h3>
+                    <p>Con siglos de historia, es un referente en **Derecho, Filología, Ciencias Sociales y Humanidades**. Sumérgete en la rica cultura española mientras recibes una educación de excelencia.</p>
+                    <a href="https://www.usal.es" target="_blank">Sitio oficial <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-map-marker-alt"></i> ETH Zúrich (Suiza)</h3>
+                    <p>Una de las universidades líderes a nivel mundial en **ciencia, tecnología, ingeniería y matemáticas (STEM)**. Reconocida por su investigación de vanguardia y sus contribuciones significativas.</p>
+                    <a href="https://ethz.ch/en.html" target="_blank">Sitio oficial <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                 <div class="card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Universidad de Melbourne (Australia)</h3>
+                    <p>Clasificada entre las mejores del mundo, ofrece una amplia gama de programas de posgrado. Destaca en **Artes, Ciencias, Salud y Negocios**. Explora un continente fascinante mientras estudias.</p>
+                    <a href="https://www.unimelb.edu.au/" target="_blank">Sitio oficial <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>Historias de Éxito</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <p><i class="fas fa-quote-left"></i> Gracias a Fulbright, estudié mi Maestría en Políticas Educativas en Harvard. Ahora lidero proyectos de impacto social en Guatemala, aplicando todo lo aprendido. ¡Un sueño hecho realidad! <i class="fas fa-quote-right"></i></p>
+                    <p><strong>— María J., Ex-becaria Fulbright</strong></p>
+                </div>
+                <div class="card">
+                    <p><i class="fas fa-quote-left"></i> Con una beca en la University of Toronto, obtuve mi título en Ingeniería de Software. Actualmente, trabajo en una startup tecnológica en Canadá, innovando cada día. ¡Fue el impulso que necesitaba! <i class="fas fa-quote-right"></i></p>
+                    <p><strong>— Carlos T., Ex-becario UofT</strong></p>
+                </div>
+                <div class="card">
+                    <p><i class="fas fa-quote-left"></i> La beca DAAD me permitió cursar mi Doctorado en Biotecnología en Alemania. La experiencia académica y cultural fue invaluable. Estoy muy agradecida con Oportunidades Globales GT. <i class="fas fa-quote-right"></i></p>
+                    <p><strong>— Ana L., Ex-becaria DAAD</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="resources-list">
+            <h2>Recursos Adicionales para tu Éxito</h2>
+            <ul>
+                <li><a href="https://www.duolingo.com" target="_blank"><i class="fas fa-language"></i> Duolingo (Aprende y practica idiomas)</a></li>
+                <li><a href="https://www.ets.org/toefl" target="_blank"><i class="fas fa-file-alt"></i> TOEFL (Examen de inglés académico)</a></li>
+                <li><a href="https://gt.usembassy.gov/education-culture/educationusa/" target="_blank"><i class="fas fa-map-marker-alt"></i> EducationUSA Guatemala (Asesoría gratuita)</a></li>
+                <li><a href="https://www.ielts.org/" target="_blank"><i class="fas fa-file-alt"></i> IELTS (Otro examen de inglés internacional)</a></li>
+                <li><a href="https://www.coursera.org/" target="_blank"><i class="fas fa-laptop-code"></i> Coursera (Cursos en línea de universidades top)</a></li>
+            </ul>
+        </section>
+
+        <section class="cta-section">
+            <h2>¿Listo para dar el siguiente paso?</h2>
+            <p>No dejes que la oportunidad de estudiar en el extranjero se escape. Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar tus metas académicas y profesionales.</p>
+            <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> ¡Empieza tu aventura!</a>
+        </section>
+
+        <section id="contact">
+            <h2>Contáctanos</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Envíanos un mensaje y te responderemos lo antes posible. ¡Estamos aquí para ayudarte!</p>
+            <form>
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="tu.correo@ejemplo.com" required>
+
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Beca Fulbright, Intercambio, etc." required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos sobre tus intereses académicos y qué tipo de beca buscas..." required></textarea>
+
+                <button type="submit"><i class="fas fa-paper-plane"></i> Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Oportunidades Globales GT. Todos los derechos reservados. | Desarrollado con <i class="fas fa-heart" style="color: #ff6347;"></i> en Guatemala.</p>
+    </footer>
+</body>
+</html>
